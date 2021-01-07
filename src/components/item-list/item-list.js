@@ -54,3 +54,18 @@ export default class ItemList extends Component {
     );
   }
 };
+
+// const f = () => {
+//   return class extends Component {
+
+//     componentDidMount() {
+//       console.log(this.props);
+//     }
+
+//     render() {
+//       return <p>Hi</p>
+//     }
+//   }
+// };
+
+// export default f();
