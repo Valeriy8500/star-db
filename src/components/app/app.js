@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 
 import Header from '../header';
 import RandomPlanet from '../random-planet';
-import ItemList from '../item-list';
 import ItemDetails, { Record } from "../item-details/item-details";
 import ErrorButton from '../error-button';
 import ErrorIndicator from '../error-indicator';
 import PeoplePage from '../people-page';
 import SwapiService from '../../services/swapi-service';
-import Row from '../row';
 import ErrorBoundry from '../error-boundry';
+
+import {
+  PersonDetails, PlanetDetails, StarshipDetails,
+  PersonList, PlanetList, StarshipList
+} from '../sw-components';
 
 import './app.css';
 
@@ -82,19 +85,23 @@ export default class App extends Component {
         <div className="stardb-app">
           <Header />
 
-          <ItemList
-            getData={getAllPeople}
-            onItemSelected={() => { }}>
+          <PersonDetails itemId={11} />
 
+          <PlanetDetails itemId={5} />
+
+          <StarshipDetails itemId={9} />
+
+          <PersonList>
             {({ name }) => <span>{name}</span>}
-          </ItemList>
+          </PersonList>
 
-          <ItemList
-            getData={getAllPlanets}
-            onItemSelected={() => { }}>
-
+          <StarshipList>
             {({ name }) => <span>{name}</span>}
-          </ItemList>
+          </StarshipList>
+
+          <PlanetList>
+            {({ name }) => <span>{name}</span>}
+          </PlanetList>
 
         </div>
       </ErrorBoundry>

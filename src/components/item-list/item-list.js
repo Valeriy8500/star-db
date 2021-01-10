@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-
-import { withData } from '../hoc-helpers';
-import SwapiService from "../../services/swapi-service";
+import React from "react";
 
 import './item-list.css';
+
+// функция ItemList возвращает готовую разметку
+// списка с именами либо имен, либо планет, либо кораблей. 
 
 const ItemList = (props) => {
 
@@ -29,7 +29,6 @@ const ItemList = (props) => {
   );
 };
 
-const { getAllPeople } = new SwapiService();
+export default ItemList;
 
-export default withData(ItemList, getAllPeople);
 

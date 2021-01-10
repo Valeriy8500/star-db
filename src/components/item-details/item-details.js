@@ -18,7 +18,7 @@ const Record = ({ item, field, label }) => {
 
 export { Record };
 
-// блок с картинкой (персонаж, планета, корабль),
+// блок с картинкой (персонаж или планета или корабль),
 // описанием и кнопкой Throw error
 
 export default class ItemDetails extends Component {
@@ -70,9 +70,9 @@ export default class ItemDetails extends Component {
     const content =
       this.state.loading ? <Spinner />
         : <PersonView
-          item={item}
-          image={image}
-          children={this.props.children} />;
+            item={item}
+            image={image}
+            children={this.props.children} />;
 
     return (
       <div className="item-details card">

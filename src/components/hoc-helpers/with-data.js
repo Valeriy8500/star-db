@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 import Spinner from "../spinner";
 import ErrorIndicator from '../error-indicator';
 
-// функция-обертка для ItemList
+// withData это функция-обертка, в нее помещаются ItemList
+// и функция которая возвращает
+// объект имен (людей или кораблей или планет).
+// withData возвращает ItemList(список) того,
+// что мы в нее положили.
 
 const withData = (View, getData) => {
 
