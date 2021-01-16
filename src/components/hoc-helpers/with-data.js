@@ -9,7 +9,7 @@ import ErrorIndicator from '../error-indicator';
 // withData возвращает ItemList(список) того,
 // что мы в нее положили.
 
-const withData = (View, getData) => {
+const withData = (View) => {
 
   return class extends Component {
 
@@ -19,7 +19,7 @@ const withData = (View, getData) => {
 
     componentDidMount() {
 
-      getData()
+      this.props.getData()
         .then((data) => {
           this.setState({
             data: data
