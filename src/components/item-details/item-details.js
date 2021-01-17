@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import SwapiService from "../../services/swapi-service";
 import Spinner from '../spinner';
-import ErrorIndicator from '../error-indicator';
 import ErrorButton from '../error-button';
 
 import './item-details.css';
@@ -36,7 +35,9 @@ export default class ItemDetails extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (this.props.itemId !== prevProps.itemId) {
+    if (this.props.itemId !== prevProps.itemId ||
+        this.props.getData !== prevProps.getData ||
+        this.props.getImageUrl !== prevProps.getImageUrl) {
 
       this.setState({ loading: true });
       this.updatePerson();
