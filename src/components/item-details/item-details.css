@@ -1,8 +1,7 @@
 .item-details {
   display: flex;
-  margin-top: 1rem;
   flex-direction: row;
-  padding: 1rem;
+  padding: 10px;
 }
 
 .item-details .item-image {
