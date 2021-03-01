@@ -8,12 +8,11 @@ import SwapiService from '../../services/swapi-service';
 import ErrorBoundry from '../error-boundry';
 import { SwapiServiceProvider } from '../swapi-service-context';
 import { StarshipDetails } from '../sw-components';
+
 import {
   PeoplePage,
   PlanetsPage,
-  StarshipsPage,
-  LoginPage,
-  SecretPage
+  StarshipsPage
 } from '../pages';
 
 import './app.css';
@@ -23,23 +22,13 @@ export default class App extends Component {
   state = {
     hasError: false,
     swapiService: new SwapiService(),
-    isLoggedIn: false
-  };
-
-  onLogin = () => {
-    this.setState({
-      isLoggedIn: true
-    });
   };
 
   componentDidCatch() {
-    console.log('componentDidCatch');
     this.setState({ hasError: true });
   };
 
   render() {
-
-    const { isLoggedIn } = this.state;
 
     if (this.state.hasError) {
       return <ErrorIndicator />
@@ -67,21 +56,9 @@ export default class App extends Component {
                     const { id } = match.params;
                     return <StarshipDetails itemId={id} />;
                   }} />
-
-                <Route
-                  path='/login'
-                  render={() => (
-                    <LoginPage
-                      isLoggedIn={isLoggedIn}
-                      onLogin={this.onLogin} />
-                  )} />
-
-                <Route
-                  path='/secret'
-                  render={() => (<SecretPage isLoggedIn={isLoggedIn} />)} />
-
                 <Route render={() => <h2>Page not found</h2>} />
               </Switch>
+
             </div>
           </Router>
         </SwapiServiceProvider>
