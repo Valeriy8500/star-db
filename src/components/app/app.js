@@ -56,7 +56,7 @@ export default class App extends Component {
                     const { id } = match.params;
                     return <StarshipDetails itemId={id} />;
                   }} />
-                <Route render={() => <h2>Page not found</h2>} />
+                <Route render={() => <h2>Welcome to StarDb</h2>} />
               </Switch>
 
             </div>

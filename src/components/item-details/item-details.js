@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 import SwapiService from "../../services/swapi-service";
 import Spinner from '../spinner';
-import ErrorButton from '../error-button';
 
 import './item-details.css';
 
@@ -36,8 +34,8 @@ export default class ItemDetails extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.itemId !== prevProps.itemId ||
-        this.props.getData !== prevProps.getData ||
-        this.props.getImageUrl !== prevProps.getImageUrl) {
+      this.props.getData !== prevProps.getData ||
+      this.props.getImageUrl !== prevProps.getImageUrl) {
 
       this.setState({ loading: true });
       this.updatePerson();
@@ -71,9 +69,9 @@ export default class ItemDetails extends Component {
     const content =
       this.state.loading ? <Spinner />
         : <PersonView
-            item={item}
-            image={image}
-            children={this.props.children} />;
+          item={item}
+          image={image}
+          children={this.props.children} />;
 
     return (
       <div className="item-details card">
@@ -103,7 +101,6 @@ const PersonView = ({ item, image, children }) => {
             })
           }
         </ul>
-        <ErrorButton />
       </div>
     </React.Fragment>
   )
