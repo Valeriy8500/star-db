@@ -1,5 +1,4 @@
 # Приложение: star-db
-**Ссылка на проект [https://valeriy8500.github.io/star-db/]**
 
 **Это приложение получает данные от: The Star Wars API.**
 
